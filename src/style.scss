@@ -1,0 +1,83 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+html, body{
+    min-height:100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom:40px;
+}
+.boardGame {
+    width: 400px;
+    height:400px;
+    background-color: rgb(215, 255, 255);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    span {
+        
+        width: 33.33%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:#333;
+        font-size: 30px;
+        outline: 1px solid #ccc;
+        position:relative;
+    
+        &:hover {
+            background: #fff;
+            cursor: pointer;
+        }
+
+        abbr{
+            font-size: 20px;
+            color:#111;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        &::after{
+            content: '';
+            display: none;
+            width: 120%;
+            height:10px;
+            background: #000;
+            position: absolute;
+            z-index:100;
+        }
+        &.horizontal{
+            &::after{
+                display: block;
+            }
+        }
+        &.vertical{
+            &::after{
+                display: block;
+                rotate: 90deg;
+            }
+        }
+        &.diagonal1{
+            &::after{
+                display: block;
+                rotate: 45deg;
+            }
+        }
+        &.diagonal2{
+            &::after{
+                display: block;
+                rotate: 135deg;
+            }
+        }
+    }
+}
